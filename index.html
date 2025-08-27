@@ -54,97 +54,23 @@
       <div id="archGlow"></div>
       <div id="bridgeGlow"></div>
       <div id="innerGlow"></div>
-      <img src="https://placeholder-for-engagement-photo.jpg" alt="Taylor Swift and Travis Kelce engagement photo"/>
+      <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Taylor Swift and Travis Kelce engagement photo"/>
       <canvas id="sparkle"></canvas>
       <div id="frontHaze"></div>
     </div>
-    
     <p class="lyric" id="lyric"></p>
-    
     <div class="pad">
       <span class="badge">Officially Engaged</span>
       <h1 data-text="Taylor & Travis">Taylor & Travis</h1>
       <p class="sub">Announced at 12:00 p.m. CST, August 26, 2025</p>
       <p class="copy">A love as bold as <span class="chiefs">Chiefs Red</span>, lit with <span class="showgirl">Showgirl Sparkle</span>. Here's to forever.</p>
-      
       <div class="cta">
-        <button class="btn" onclick="sendBlessing()">Send Your Love</button>
-        <span class="count"><span id="wishesCount">0</span> wishes sent</span>
+        <button class="btn" id="showerBtn">Send Your Love</button>
+        <span class="count" id="countBadge">Wishes Sent: 0</span>
       </div>
       <p class="wishes-intro">Shower them with love and light</p>
-      
-      <footer>Created for Swifties and 92%ers to celebrate and send them blessings</footer>
+      <footer>
+        Created for Swifties and 92%ers to celebrate and send them blessings
+      </footer>
     </div>
   </main>
-  
-  <!-- API Integration Script -->
-  <script>
-    // GET/POST functions for /api/blessings
-    async function getBlessings() {
-      try {
-        const response = await fetch('/api/blessings');
-        if (!response.ok) {
-          throw new Error('Failed to fetch blessings');
-        }
-        const data = await response.json();
-        return data.count || 0;
-      } catch (error) {
-        console.error('Error fetching blessings:', error);
-        return 0;
-      }
-    }
-    
-    async function sendBlessing() {
-      try {
-        const response = await fetch('/api/blessings', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({ message: 'Blessing sent' })
-        });
-        
-        if (!response.ok) {
-          throw new Error('Failed to send blessing');
-        }
-        
-        const data = await response.json();
-        updateWishesCounter(data.count);
-        
-        // Trigger visual effects
-        if (typeof hype === 'function') {
-          hype();
-        }
-        
-      } catch (error) {
-        console.error('Error sending blessing:', error);
-        // Still trigger visual effects even if API fails
-        if (typeof hype === 'function') {
-          hype();
-        }
-      }
-    }
-    
-    function updateWishesCounter(count) {
-      const wishesCountElement = document.getElementById('wishesCount');
-      if (wishesCountElement) {
-        wishesCountElement.textContent = count;
-      }
-    }
-    
-    // Initialize counter on page load
-    window.addEventListener('DOMContentLoaded', async function() {
-      const count = await getBlessings();
-      updateWishesCounter(count);
-      
-      // Update counter every 10 seconds
-      setInterval(async () => {
-        const count = await getBlessings();
-        updateWishesCounter(count);
-      }, 10000);
-    });
-  </script>
-  
-  <script src="effects.js"></script>
-</body>
-</html>
