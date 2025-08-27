@@ -1,9 +1,9 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8"/>
   <title>Engagement Card — Taylor & Travis</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <style>
     :root{
       --bg:#0f1015; --ink:#ffffff; --muted:#cfd2da; --radius:22px;
@@ -14,24 +14,20 @@
     html,body{height:100%;margin:0;padding:0}
     body{color:var(--ink);background:var(--bg);font-family:ui-serif,Georgia,"Times New Roman",system-ui;display:grid;place-items:center;padding:24px;}
     .card{position:relative;width:min(860px,95vw);border-radius:var(--radius);background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.12);box-shadow:0 10px 50px rgba(0,0,0,.55),inset 0 0 0 1px rgba(255,255,255,.05),inset 0 0 30px rgba(255,209,102,.08);overflow:hidden;}
-
     .hero{position:relative;aspect-ratio:16/9;overflow:hidden;cursor:pointer;display:block;}
     .hero.glow-on #bridgeGlow{opacity:.28}
     .hero.glow-on #innerGlow{opacity:.30}
     .hero.glow-on #archGlow{opacity:.18}
     .hero #bridgeGlow,.hero #innerGlow,.hero #archGlow{transition:opacity .35s ease}
-
     #backGlow,#archGlow,#bridgeGlow,#innerGlow,#sparkle,#frontHaze{position:absolute;inset:0;display:block;pointer-events:none;}
     #backGlow{z-index:1;mix-blend-mode:screen;}
     #archGlow{z-index:2;mix-blend-mode:screen;}
     #bridgeGlow{z-index:2;mix-blend-mode:screen;}
     #innerGlow{z-index:2;mix-blend-mode:screen;}
-
     .hero img{position:relative;z-index:4;width:100%;height:100%;object-fit:cover;display:block;filter:saturate(1.05) contrast(1.03);}
     .hero::after{content:"";position:absolute;inset:0;z-index:5;background:radial-gradient(120% 80% at 50% 18%,transparent 48%,rgba(0,0,0,.32)72%,rgba(0,0,0,.56)100%);}
     #sparkle{z-index:6;}
     #frontHaze{z-index:7;opacity:.05;mix-blend-mode:overlay;background:radial-gradient(120% 90% at 50% 60%,rgba(255,255,255,.12),transparent 60%);}
-
     .pad{text-align:center;padding:clamp(18px,4vw,36px);}
     .badge{display:inline-block;padding:.5rem 1rem;border-radius:999px;background:#ffd166;color:#0b0b0f;font-weight:800;letter-spacing:.2px;box-shadow:0 8px 22px rgba(0,0,0,.35);}
     h1{margin:.75rem 0 0;font-size:clamp(2.4rem,3.2vw+1rem,3.8rem);line-height:1.05;font-weight:900;letter-spacing:.3px;color:#fff;text-shadow:0 2px 18px rgba(0,0,0,.45);transition:all .4s ease;--glow-intensity: 0;}
@@ -41,20 +37,13 @@
     .chiefs{background:linear-gradient(90deg,#FFD166 0%,#FFD166 40%,#E31837 60%,#E31837 100%);background-size:200% 100%;background-position:0% 50%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:flow 8s linear infinite;}
     .showgirl{background:var(--showgirl-grad);background-size:220% 100%;background-position:0% 50%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:flow 10s linear infinite;}
     @keyframes flow{to{background-position:100% 50%;}}
-
     .lyric{display:block;margin:0;padding:1rem;font-family:'Segoe Script','Bradley Hand','Comic Sans MS',cursive;font-size:1rem;color:#ffd166;text-align:center;letter-spacing:.2px;text-shadow:0 1px 6px rgba(0,0,0,.55);background:rgba(255,255,255,.02);border-top:1px solid rgba(255,255,255,.1);border-bottom:1px solid rgba(255,255,255,.1);overflow:hidden;word-wrap:normal;white-space:nowrap;opacity:0;transition:opacity 0.3s ease;}
     .lyric.show{opacity:1;}
-
     .cta{margin-top:1.4rem;display:flex;justify-content:center;gap:12px;}
     .btn{appearance:none;border:0;cursor:pointer;padding:12px 18px;border-radius:12px;font-weight:800;color:#0b0b0f;letter-spacing:.2px;background:linear-gradient(135deg,#E31837,#FFD166);box-shadow:0 12px 32px rgba(0,0,0,.35);transition:transform .07s ease,filter .2s ease;}
     .btn:hover{transform:translateY(-1px);filter:brightness(1.06);}
     .count{align-self:center;margin-left:12px;padding:8px 10px;border-radius:10px;background:rgba(255,255,255,.08);color:#ffd166;font-weight:700;letter-spacing:.2px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.12);}
-    
     .wishes-intro{color:var(--muted);font-size:1rem;margin:1rem 0;font-style:italic;text-align:center;}
-
-    
-
-    
     footer{text-align:center;color:var(--muted);font-size:.92rem;margin-top:1.2rem;padding-bottom:.6rem;}
   </style>
 </head>
@@ -65,7 +54,7 @@
       <div id="archGlow"></div>
       <div id="bridgeGlow"></div>
       <div id="innerGlow"></div>
-      <img src="https://akns-images.eonline.com/eol_images/Entire_Site/20250826/934ebee1-63b9-4f36-b09b-5dc00a7af6e0_1756229059.jpg" alt="Taylor Swift and Travis Kelce engagement photo">
+      <img src="https://placeholder-for-engagement-photo.jpg" alt="Taylor Swift and Travis Kelce engagement photo"/>
       <canvas id="sparkle"></canvas>
       <div id="frontHaze"></div>
     </div>
@@ -77,11 +66,10 @@
       <h1 data-text="Taylor & Travis">Taylor & Travis</h1>
       <p class="sub">Announced at 12:00 p.m. CST, August 26, 2025</p>
       <p class="copy">A love as bold as <span class="chiefs">Chiefs Red</span>, lit with <span class="showgirl">Showgirl Sparkle</span>. Here's to forever.</p>
-
       
       <div class="cta">
-        <button class="btn" id="showerBtn">Send Your Love</button>
-        <span class="count" id="countBadge">Wishes Sent: 0</span>
+        <button class="btn" onclick="sendBlessing()">Send Your Love</button>
+        <span class="count"><span id="wishesCount">0</span> wishes sent</span>
       </div>
       <p class="wishes-intro">Shower them with love and light</p>
       
@@ -89,300 +77,74 @@
     </div>
   </main>
   
-  <!-- Firebase for global counter -->
-  <script type="module">
-    import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
-    import { getFirestore, doc, getDoc, updateDoc, increment } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
-    
-    // Your Firebase config (you'll need to create a free Firebase project)
-    const firebaseConfig = {
-      // You'll add your Firebase config here
-    };
-    
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const db = getFirestore(app);
-    
-    // Global counter functionality
-    window.globalCounter = {
-      async getCount() {
-        try {
-          const docRef = doc(db, 'engagement', 'counter');
-          const docSnap = await getDoc(docRef);
-          if (docSnap.exists()) {
-            return docSnap.data().wishes || 0;
-          } else {
-            return 0;
-          }
-        } catch (error) {
-          console.log('Error getting count:', error);
-          return 0;
+  <!-- API Integration Script -->
+  <script>
+    // GET/POST functions for /api/blessings
+    async function getBlessings() {
+      try {
+        const response = await fetch('/api/blessings');
+        if (!response.ok) {
+          throw new Error('Failed to fetch blessings');
         }
-      },
-      
-      async incrementCount() {
-        try {
-          const docRef = doc(db, 'engagement', 'counter');
-          await updateDoc(docRef, {
-            wishes: increment(1)
-          });
-        } catch (error) {
-          console.log('Error incrementing count:', error);
+        const data = await response.json();
+        return data.count || 0;
+      } catch (error) {
+        console.error('Error fetching blessings:', error);
+        return 0;
+      }
+    }
+    
+    async function sendBlessing() {
+      try {
+        const response = await fetch('/api/blessings', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ message: 'Blessing sent' })
+        });
+        
+        if (!response.ok) {
+          throw new Error('Failed to send blessing');
         }
-      },
-      
-      async updateDisplay() {
-        const count = await this.getCount();
-        const badge = document.getElementById('countBadge');
-        if (badge) {
-          badge.textContent = `Wishes Sent: ${count.toLocaleString()}`;
+        
+        const data = await response.json();
+        updateWishesCounter(data.count);
+        
+        // Trigger visual effects
+        if (typeof hype === 'function') {
+          hype();
+        }
+        
+      } catch (error) {
+        console.error('Error sending blessing:', error);
+        // Still trigger visual effects even if API fails
+        if (typeof hype === 'function') {
+          hype();
         }
       }
-    };
+    }
     
-    // Update display every 5 seconds
-    setInterval(() => {
-      window.globalCounter.updateDisplay();
-    }, 5000);
+    function updateWishesCounter(count) {
+      const wishesCountElement = document.getElementById('wishesCount');
+      if (wishesCountElement) {
+        wishesCountElement.textContent = count;
+      }
+    }
     
-    // Initial load
-    window.globalCounter.updateDisplay();
+    // Initialize counter on page load
+    window.addEventListener('DOMContentLoaded', async function() {
+      const count = await getBlessings();
+      updateWishesCounter(count);
+      
+      // Update counter every 10 seconds
+      setInterval(async () => {
+        const count = await getBlessings();
+        updateWishesCounter(count);
+      }, 10000);
+    });
   </script>
   
   <script src="effects.js"></script>
-  <!-- Interaction Script: restores glow + shower on click -->
-  <script>
-  (function(){
-    function boot(){
-      const hero=document.getElementById('heroBox');
-      const canvas=document.getElementById('sparkle');
-      const btn=document.getElementById('showerBtn');
-      const badge=document.getElementById('countBadge');
-      const bk=document.getElementById('backGlow');
-      const br=document.getElementById('bridgeGlow');
-      const inr=document.getElementById('innerGlow');
-      const arch=document.getElementById('archGlow');
-      if(!hero||!canvas) return;
-      const ctx=canvas.getContext('2d'); if(!ctx) return;
-
-      // sizing
-      let w=0,h=0,dpr=1; const TAU=Math.PI*2;
-      function resize(){
-        const r=hero.getBoundingClientRect();
-        dpr=Math.min(window.devicePixelRatio||1,2);
-        w=r.width; h=r.height;
-        canvas.width=Math.floor(w*dpr); canvas.height=Math.floor(h*dpr);
-        canvas.style.width=w+'px'; canvas.style.height=h+'px';
-        ctx.setTransform(dpr,0,0,dpr,0,0);
-      }
-      window.addEventListener('resize',resize,{passive:true});
-      resize();
-
-      // state
-      let intensity=0, glowLevel=0, targetGlow=0, lastClick=0, archPulse=0;
-      let count=parseInt(localStorage.getItem('wishesCount')||'0',10);
-      function renderCount(){ if(badge) badge.textContent='Wishes Sent: '+count; }
-      renderCount();
-
-      // soft glow rain particles
-      const base=['#FFF7D1','#FFE9A6','#FFD166','#F6C27A','#FFB457','#FFA040'];
-      const near=[], far=[], twinkles=[], glowRain=[];
-      
-      function makeGlow(layer){
-        const isNear=layer==='near';
-        const off=w*0.15;
-        return {
-          x:-off+Math.random()*(w+off*2),
-          y:-Math.random()*h*0.12,
-          r:(isNear?1.3:1.0)+Math.random()*(isNear?0.8:0.6),
-          vy:(isNear?0.34:0.28)+Math.random()*(isNear?0.10:0.08),
-          vx:(Math.random()-.5)*(isNear?0.16:0.10),
-          life:(isNear?5+Math.random()*2:8+Math.random()*3),
-          age:0,
-          pulse:0.7+Math.random()*0.6,
-          col:base[Math.floor(Math.random()*base.length)]
-        };
-      }
-      
-      function makeGlowRain(){
-        return {
-          x: Math.random() * w,
-          y: -Math.random() * h * 0.2,
-          r: 2 + Math.random() * 4,
-          vy: 0.8 + Math.random() * 1.2,
-          vx: (Math.random() - 0.5) * 0.5,
-          life: 3 + Math.random() * 4,
-          age: 0,
-          pulse: 0.5 + Math.random() * 0.8,
-          col: base[Math.floor(Math.random() * base.length)],
-          glow: 0.3 + Math.random() * 0.7
-        };
-      }
-      function makeTwinkle(x,y){
-        const by=(y!==undefined)?y:(h*(0.72+Math.random()*0.24));
-        const bx=(x!==undefined)?x+(Math.random()-0.5)*12:Math.random()*w;
-        return {x:bx,y:by,r0:0.5+Math.random()*0.6,r1:4+Math.random()*6,age:0,dur:1.0+Math.random()*0.5};
-      }
-
-      function drawGlow(g,isNear,speed){
-        g.x+=(g.vx+Math.sin(g.age*g.pulse)*0.04)*(1+0.12*intensity);
-        g.y+=g.vy*speed; g.age+=0.016*(1+0.10*intensity);
-        if(g.y>=h*0.995){
-          const jx=g.x+(Math.random()-0.5)*14; const jy=h*(0.97+Math.random()*0.03);
-          twinkles.push(makeTwinkle(jx,jy)); g.age=g.life+1;
-        }
-        const bottomFade=(g.y>h*0.975)?1-(g.y-h*0.975)/(h*0.025):1;
-        const a=Math.max(0,(1-g.age/g.life)*bottomFade);
-        const R=(g.r+Math.sin(g.age*g.pulse)*0.05)*(isNear?8:6);
-        const grad=ctx.createRadialGradient(g.x,g.y,0,g.x,g.y,R);
-        grad.addColorStop(0,g.col); grad.addColorStop(1,'transparent');
-        ctx.globalAlpha=a*(isNear?0.9:0.65);
-        ctx.globalCompositeOperation='lighter';
-        ctx.fillStyle=grad; ctx.beginPath(); ctx.arc(g.x,g.y,R,0,TAU); ctx.fill();
-        ctx.globalCompositeOperation='source-over';
-      }
-      function drawTwinkle(t){
-        const tnorm=Math.min(1,t.age/t.dur);
-        const ease=tnorm<0.5?2*tnorm*tnorm:1-Math.pow(-2*tnorm+2,2)/2;
-        const R=t.r0+(t.r1-t.r0)*ease; const alpha=(1-tnorm)*0.9;
-        const grad=ctx.createRadialGradient(t.x,t.y,0,t.x,t.y,R);
-        grad.addColorStop(0,'#FFFBEA'); grad.addColorStop(0.4,'#FFE7A8'); grad.addColorStop(1,'transparent');
-        ctx.globalCompositeOperation='lighter'; ctx.globalAlpha=alpha;
-        ctx.fillStyle=grad; ctx.beginPath(); ctx.arc(t.x,t.y,R,0,TAU); ctx.fill();
-        ctx.globalCompositeOperation='source-over';
-      }
-      
-      function drawGlowRain(g){
-        g.x += g.vx;
-        g.y += g.vy;
-        g.age += 0.016;
-        
-        if(g.y >= h + 20 || g.age > g.life) return false;
-        
-        const alpha = Math.max(0, (1 - g.age / g.life)) * g.glow;
-        const R = g.r + Math.sin(g.age * g.pulse) * 0.3;
-        
-        // Create soft glow effect
-        const grad = ctx.createRadialGradient(g.x, g.y, 0, g.x, g.y, R * 3);
-        grad.addColorStop(0, g.col);
-        grad.addColorStop(0.3, g.col + '80');
-        grad.addColorStop(1, 'transparent');
-        
-        ctx.globalCompositeOperation = 'lighter';
-        ctx.globalAlpha = alpha * 0.8;
-        ctx.fillStyle = grad;
-        ctx.beginPath();
-        ctx.arc(g.x, g.y, R * 3, 0, TAU);
-        ctx.fill();
-        
-        // Add inner bright core
-        const coreGrad = ctx.createRadialGradient(g.x, g.y, 0, g.x, g.y, R);
-        coreGrad.addColorStop(0, '#FFFFFF');
-        coreGrad.addColorStop(0.5, g.col);
-        coreGrad.addColorStop(1, 'transparent');
-        
-        ctx.globalAlpha = alpha;
-        ctx.fillStyle = coreGrad;
-        ctx.beginPath();
-        ctx.arc(g.x, g.y, R, 0, TAU);
-        ctx.fill();
-        
-        ctx.globalCompositeOperation = 'source-over';
-        return true;
-      }
-
-      function loop(){
-        ctx.clearRect(0,0,w,h);
-        const targetNear=12+Math.floor(intensity*5), targetFar=18+Math.floor(intensity*5), speed=1.35+0.28*intensity;
-        const targetGlowRain=25+Math.floor(intensity*10);
-        
-        while(near.length<targetNear) near.push(makeGlow('near'));
-        while(far.length<targetFar)   far.push(makeGlow('far'));
-        while(glowRain.length<targetGlowRain) glowRain.push(makeGlowRain());
-        
-        for(let i=far.length-1;i>=0;i--){ const g=far[i]; drawGlow(g,false,speed); if(g.y>h+20||g.age>g.life) far.splice(i,1);}        
-        for(let i=near.length-1;i>=0;i--){ const g=near[i]; drawGlow(g,true,speed); if(g.y>h+20||g.age>g.life) near.splice(i,1);}        
-        for(let i=glowRain.length-1;i>=0;i--){ const g=glowRain[i]; if(!drawGlowRain(g)) glowRain.splice(i,1); }
-        
-        if(Math.random()<0.015+intensity*0.02) twinkles.push(makeTwinkle());
-        for(let i=twinkles.length-1;i>=0;i--){ const t=twinkles[i]; t.age+=0.016*(1+0.20*intensity); drawTwinkle(t); if(t.age>t.dur) twinkles.splice(i,1);}        
-
-        if(arch){ archPulse+=0.03; arch.style.opacity=String(0.20+0.16*Math.sin(archPulse)); }
-        { const follow=0.18; let diff=(targetGlow-glowLevel)*follow; const md=0.06; if(diff>md) diff=md; else if(diff<-md) diff=-md; glowLevel+=diff; }
-        if(bk)  bk.style.opacity  = String(0.10 + Math.min(0.20, intensity*0.06));
-        if(br)  br.style.opacity  = String(Math.min(0.60, 0.05 + glowLevel*0.55));
-        if(inr) inr.style.opacity = String(Math.min(0.70, 0.06 + glowLevel*0.55));
-
-        intensity=Math.max(0,intensity*0.90-0.010);
-        targetGlow=Math.max(0,targetGlow*0.94-0.006);
-        requestAnimationFrame(loop);
-      }
-      requestAnimationFrame(loop);
-
-      function hype(){
-        const now=(performance&&performance.now)?performance.now():Date.now();
-        const since=now-lastClick; lastClick=now; const fast=since<140;
-        // Increment global counter
-        if(window.globalCounter) {
-          window.globalCounter.incrementCount();
-        }
-        intensity=Math.min(3,intensity+(fast?0.35:0.6));
-        targetGlow=Math.min(0.9,targetGlow+(fast?0.16:0.28));
-        for(let i=0;i<(fast?6:8);i++) near.push(makeGlow('near'));
-        for(let i=0;i<(fast?5:7);i++)  far.push(makeGlow('far'));
-        for(let i=0;i<(fast?6:8);i++)  twinkles.push(makeTwinkle());
-        for(let i=0;i<(fast?12:15);i++) glowRain.push(makeGlowRain());
-        
-        // Show lyric while clicking (your daughter's tribute)
-        const lyric=document.getElementById('lyric');
-        if(lyric){
-          const lyricText = '"I didn\'t know if you knew, so I\'m taking this chance to say that I had then best day with you today."';
-          
-          // Show lyric if not already visible
-          if(!lyric.classList.contains('show')) {
-            lyric.classList.add('show');
-            lyric.textContent = lyricText;
-          }
-          
-          // Clear existing timeout and set new one
-          if(lyric.timeoutId) clearTimeout(lyric.timeoutId);
-          lyric.timeoutId = setTimeout(()=>{
-            lyric.classList.remove('show');
-          }, 800);
-        }
-        
-        // Subtle glow effect for their names
-        const title = document.querySelector('h1');
-        if(title){
-          // Get current glow intensity
-          let currentGlow = parseFloat(getComputedStyle(title).getPropertyValue('--glow-intensity')) || 0;
-          
-          // Add a small amount of glow with each click
-          const glowIncrement = 0.15;
-          const newGlow = Math.min(1, currentGlow + glowIncrement);
-          
-          // Set the new glow intensity
-          title.style.setProperty('--glow-intensity', newGlow);
-          title.classList.add('glowing');
-          
-          // Clear existing timeout and set new one
-          if(title.glowTimeout) clearTimeout(title.glowTimeout);
-          title.glowTimeout = setTimeout(()=>{
-            title.classList.remove('glowing');
-            title.style.setProperty('--glow-intensity', '0');
-          }, 1200);
-        }
-
-      }
-
-
-
-      hero.addEventListener('click',hype); hero.addEventListener('pointerdown',hype);
-      if(btn){ btn.addEventListener('click',hype); btn.addEventListener('pointerdown',hype); }
-    }
-    if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',boot); else boot();
-  })();
-  </script>
-
 </body>
 </html>
