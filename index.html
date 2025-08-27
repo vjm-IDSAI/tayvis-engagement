@@ -1,9 +1,58 @@
-const firebaseConfig = {
-  apiKey: "AIzaSyCJ7TQ084FpnSkbqNlGeiHUH8_c1z2uicE",
-  authDomain: "tayvis-engagement.firebaseapp.com",
-  projectId: "tayvis-engagement",
-  storageBucket: "tayvis-engagement.firebasestorage.app",
-  messagingSenderId: "612968132454",
-  appId: "1:612968132454:web:81eb995595d29105a7a2a7",
-  measurementId: "G-T111WNF5FP"
-};
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taylor Swift Engagement Tracker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .loading {
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Taylor Swift Engagement Tracker</h1>
+        <div id="content">
+            <div class="loading">Loading engagement data...</div>
+        </div>
+    </div>
+
+    <script>
+        // Firebase Configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyCJ7TQ084FpnSkbqNlGeiHUH8_c1z2uicE",
+            authDomain: "tayvis-engagement.firebaseapp.com",
+            projectId: "tayvis-engagement",
+            storageBucket: "tayvis-engagement.firebasestorage.app",
+            messagingSenderId: "612968132454",
+            appId: "1:612968132454:web:81eb995595d29105a7a2a7",
+            measurementId: "G-T111WNF5FP"
+        };
+        
+        // Initialize the app when ready
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Taylor Swift Engagement Tracker loaded');
+            // Add your app initialization code here
+        });
+    </script>
+</body>
+</html>
