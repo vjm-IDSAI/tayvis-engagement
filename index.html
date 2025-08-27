@@ -74,3 +74,98 @@
       </footer>
     </div>
   </main>
+
+  <!-- Firebase App (the core Firebase SDK) -->
+  <script type="module">
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js';
+    import { getFirestore, doc, updateDoc, increment, getDoc } from 'https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js';
+
+    // Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyCJ7TQ084FpnSkbqNlGeiHUH8_c1z2uicE",
+      authDomain: "tayvis-engagement.firebaseapp.com",
+      projectId: "tayvis-engagement",
+      storageBucket: "tayvis-engagement.firebasestorage.app",
+      messagingSenderId: "612968132454",
+      appId: "1:612968132454:web:81eb995595d29105a7a2a7",
+      measurementId: "G-T111WNF5FP"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    // Counter functionality
+    let currentCount = 0;
+    const countBadge = document.getElementById('countBadge');
+    const showerBtn = document.getElementById('showerBtn');
+    const heroBox = document.getElementById('heroBox');
+    const h1 = document.querySelector('h1');
+    const lyricElement = document.getElementById('lyric');
+
+    // Load initial count from Firestore
+    async function loadCount() {
+      try {
+        const docRef = doc(db, 'counters', 'wishes');
+        const docSnap = await getDoc(docRef);
+        
+        if (docSnap.exists()) {
+          currentCount = docSnap.data().count || 0;
+          countBadge.textContent = `Wishes Sent: ${currentCount.toLocaleString()}`;
+        }
+      } catch (error) {
+        console.error('Error loading count:', error);
+      }
+    }
+
+    // Update count in Firestore
+    async function updateCount() {
+      try {
+        const docRef = doc(db, 'counters', 'wishes');
+        await updateDoc(docRef, {
+          count: increment(1)
+        });
+        
+        currentCount += 1;
+        countBadge.textContent = `Wishes Sent: ${currentCount.toLocaleString()}`;
+      } catch (error) {
+        console.error('Error updating count:', error);
+      }
+    }
+
+    // Load count on page load
+    loadCount();
+
+    // Button click handler
+    showerBtn.addEventListener('click', async () => {
+      await updateCount();
+      
+      // Add visual effects
+      heroBox.classList.add('glow-on');
+      h1.classList.add('glowing');
+      h1.style.setProperty('--glow-intensity', '1');
+      
+      // Show lyric
+      const lyrics = [
+        "All's well that ends well to end up with you",
+        "You were my crown, now I'm in exile",
+        "I'd fall to pieces on the floor if you weren't around",
+        "Long story short, I survived",
+        "You are the best thing that's ever been mine"
+      ];
+      
+      const randomLyric = lyrics[Math.floor(Math.random() * lyrics.length)];
+      lyricElement.textContent = randomLyric;
+      lyricElement.classList.add('show');
+      
+      // Reset after 3 seconds
+      setTimeout(() => {
+        heroBox.classList.remove('glow-on');
+        h1.classList.remove('glowing');
+        h1.style.setProperty('--glow-intensity', '0');
+        lyricElement.classList.remove('show');
+      }, 3000);
+    });
+  </script>
+</body>
+</html>
