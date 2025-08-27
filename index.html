@@ -57,7 +57,7 @@
       <div id="archGlow"></div>
       <div id="bridgeGlow"></div>
       <div id="innerGlow"></div>
-      <img src="https://storage.googleapis.com/msgsndr/drd1jVTMGEyy4qrJRrjP/media/68af6b4fd7981733c33114d3.webp" alt="Taylor Swift and Travis Kelce engagement photo"/>
+      <img alt="Taylor Swift and Travis Kelce engagement photo" src="https://cdn.pixabay.com/photo/2024/01/01/00/00/bridge-8477834_1280.jpg"/>
       <canvas id="sparkle"></canvas>
       <div id="frontHaze"></div>
     </div>
@@ -66,12 +66,13 @@
     
     <div class="pad">
       <span class="badge">Officially Engaged</span>
-      <h1 data-text="Taylor &amp; Travis">Taylor &amp; Travis</h1>
+      <h1 data-text="Taylor & Travis">Taylor & Travis</h1>
       <p class="sub">Announced at 12:00 p.m. CST, August 26, 2025</p>
       <p class="copy">A love as bold as <span class="chiefs">Chiefs Red</span>, lit with <span class="showgirl">Showgirl Sparkle</span>. Here's to forever.</p>
       
       <div class="cta">
         <button class="btn" id="showerBtn">Send Your Love</button>
+        <span class="count" id="userCountBadge">Your Wishes Sent: 0</span>
         <span class="count" id="countBadge">Wishes Sent: 0</span>
       </div>
       <p class="wishes-intro">Shower them with love and light</p>
@@ -162,10 +163,47 @@
       }
     };
     
+    // Local storage counter functionality
+    function initUserCounter() {
+      const userWishes = localStorage.getItem('userWishes') || '0';
+      updateUserCountDisplay(parseInt(userWishes));
+    }
+    
+    function updateUserCountDisplay(count) {
+      const userBadge = document.getElementById('userCountBadge');
+      if (userBadge) {
+        userBadge.textContent = `Your Wishes Sent: ${count}`;
+      }
+    }
+    
+    function incrementUserCount() {
+      const currentCount = parseInt(localStorage.getItem('userWishes') || '0');
+      const newCount = currentCount + 1;
+      localStorage.setItem('userWishes', newCount.toString());
+      updateUserCountDisplay(newCount);
+    }
+    
+    // Button click handler with dual counters
+    document.getElementById('showerBtn').addEventListener('click', function() {
+      // Increment personal counter instantly
+      incrementUserCount();
+      
+      // Increment global counter
+      window.globalCounter.incrementCount();
+      
+      // Update global display (may take a moment)
+      setTimeout(() => {
+        window.globalCounter.updateDisplay();
+      }, 500);
+    });
+    
     // Initialize shards on load
     initShards();
     
-    // Update display every 5 seconds
+    // Initialize user counter on load
+    initUserCounter();
+    
+    // Update global display every 5 seconds
     setInterval(() => {
       window.globalCounter.updateDisplay();
     }, 5000);
